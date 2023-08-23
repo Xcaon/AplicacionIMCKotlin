@@ -162,7 +162,7 @@
                 android:id="@+id/tvContadorPeso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="50"
                 android:textColor="@color/white"
                 android:textSize="42sp"
                 android:textStyle="bold"></TextView>
@@ -260,7 +260,7 @@
                 android:id="@+id/tvContadorEdad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="18"
                 android:textColor="@color/white"
                 android:textSize="42sp"
                 android:textStyle="bold">

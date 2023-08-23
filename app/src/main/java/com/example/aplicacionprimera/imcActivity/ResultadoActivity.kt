@@ -12,6 +12,7 @@ class ResultadoActivity : AppCompatActivity() {
 
 
     private lateinit var tvResultadoFinal: TextView
+    private lateinit var tvBienestar: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,17 +37,24 @@ class ResultadoActivity : AppCompatActivity() {
         var calculoIMC = pesoFormateado / (alturaFormateado.toDouble() / 100 * alturaFormateado.toDouble() / 100)
         var calculoIMCFormateado = df.format(calculoIMC).toDouble()
 
-        Log.i("fernando", calculoIMC.toString())
+
         tvResultadoFinal.text = calculoIMCFormateado.toString()
-        Log.i("fernandoIMC",altura.toString())
-        Log.i("fernando",peso.toString())
-        Log.i("fernando",edad.toString())
+
+
+
+        if ( calculoIMCFormateado < 20 ){
+            tvBienestar.text = "Tienes un buen IMC"
+        } else if ( calculoIMCFormateado > 20 && calculoIMCFormateado < 30) {
+            tvBienestar.text = "Tu IMC esta en la media"
+        } else {
+            tvBienestar.text = "Tienes sobrepeso"
+        }
 
     }
 
     private fun initComponents() {
         tvResultadoFinal = findViewById(R.id.tvResultadoFinal)
-
+        tvBienestar = findViewById(R.id.tvBienestar)
 
     }
 }
